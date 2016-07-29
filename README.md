@@ -10,8 +10,8 @@
    * easy to use and install
 
 ## Screen Shots:
-   * ![Alt text](/screen_shots/block_head_name.png?raw=true "Picking a Player Name")
-   * ![Alt text](/screen_shots/block_head_question.png?raw=true "Answer a Question"))
+   * ![Alt text](https://github.com/lemon65/blockhead_trivia/blob/master/screen_shots/block_head_name.PNG?raw=true "Picking a Player Name")
+   * ![Alt text](https://github.com/lemon65/blockhead_trivia/blob/master/screen_shots/block_head_question.PNG?raw=true "Answer a Question"))
 
 ## Installation:
    * Git Clone https://github.com/lemon65/blockhead_trivia
