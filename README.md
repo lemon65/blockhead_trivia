@@ -1,7 +1,6 @@
 
 # Block Head Trivia
-   * Simple Command Line Trivia game, it tracks score and uses and API with
-     over 10,000 Questions!
+   * This is a Simple Command Line based Trivia game that uses the API (http://jservice.io) to gather a random trivia question from a pool of 156,000 questions. It will record your current games score and be able to log it once you’re finished. It can also display the top 5 scores that the users have achieved with the (-s) command.  
 
 ## Features:
    * Many Different questions
