@@ -126,7 +126,7 @@ def main():
                 answer_status = True
                 print 'Correct! ==> Answer is:[%s], you earned %s points.' % (answer, value)
             else:
-                print 'Sorry Incorrect, the answer is: %s' % answer
+                print 'Incorrect/Passing, the answer is: %s' % answer
 
             if user_answer.lower() != 'pass':
                 calc_score(value, answer_status)
