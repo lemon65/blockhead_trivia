@@ -3,6 +3,7 @@
 import os
 import sys
 import time
+import difflib
 import argparse
 import pickle
 import get_trivia as gt
@@ -115,16 +116,19 @@ def main():
             response = gt.trivia_caller()[0]
             question = response.get('question')
             answer = response.get('answer')
+            answer_list_letters = list(answer)
             value = response.get('value')
             tmp_dict = response['category']
             category = tmp_dict.get('title')
             display_question(question, category, value)
             user_answer = raw_input('Please Enter an Answer: ')
+            u_answer_list_letters = list(user_answer)
             if 'exit' in user_answer.lower() or 'quit' in user_answer.lower():
                 break
-            if user_answer.lower() in answer.lower() and user_answer:
+            sm = difflib.SequenceMatcher(None,answer_list_letters, u_answer_list_letters)
+            if sm.ratio() >= 0.5 and user_answer:
                 answer_status = True
-                print 'Correct! ==> Answer is:[%s], you earned %s points.' % (answer, value)
+                print 'Correct! ==> Answer is:[%s], Points: %s, Answer Ratio: %s' % (answer, value, sm.ratio())
             else:
                 print 'Incorrect/Passing, the answer is: %s' % answer
 
@@ -133,7 +137,6 @@ def main():
             time.sleep(3)
     except KeyboardInterrupt:
         pass
-    print
     save_scores(player_name)
 
 if __name__ == "__main__":
